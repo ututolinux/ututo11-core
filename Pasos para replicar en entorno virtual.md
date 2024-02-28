@@ -1,4 +1,4 @@
-# Instrucciones de de como Convertir una imagen de feora al core minimo necesario
+# Instrucciones de de como convertir una imagen de fedora al core minimo necesario
 ## Paso 1:
 Instalar fedora everything desde el siguiente [link](https://alt.fedoraproject.org/), en el Instalador Anaconda seleccionar instalacíon minima.
 ## Paso 2:
