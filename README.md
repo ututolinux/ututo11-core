@@ -1,1 +1,86 @@
-# ututo11-core
+# Configure installation method
+```
+url --mirrorlist="https://mirrors.fedoraproject.org/mirrorlist?repo=fedora-40&arch=x86_64"
+repo --name=fedora-updates --mirrorlist="https://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f39&arch=x86_64" --cost=0
+```
+
+# Configure Boot Loader
+bootloader --driveorder=sda
+
+# Remove all existing partitions
+clearpart --drives=sda --all
+
+# zerombr
+zerombr
+
+# Create required partitions (BIOS boot partition and /boot)
+reqpart --add-boot
+
+# Create Physical Partition
+```
+part pv.01 --ondrive=sda --asprimary --size=10240 --grow
+volgroup vg pv.01
+logvol swap --hibernation --vgname=vg --name=swap
+logvol / --vgname=vg --name=fedora-root --size=10240 --grow --fstype=xfs
+```
+
+# Configure Firewall
+firewall --enabled --port=80:tcp,8080:tcp,443:tcp,22:tcp
+
+# Configure Network Interfaces
+network --onboot=yes --bootproto=dhcp --hostname=ututo
+
+# Configure Keyboard Layouts
+keyboard latam
+
+# Configure Language During Installation
+lang es_AR.UTF-8
+
+# Services to enable/disable
+services --disabled=mlocate-updatedb,mlocate-updatedb.timer,geoclue,avahi-daemon
+
+# Configure Time Zone
+timezone America/Argentina/Buenos_Aires 
+
+# Set Root Password
+rootpw --lock
+
+# Create User Account
+user --name=ututo --password=$userpass --iscrypted --groups=wheel
+
+# Configure faillock
+authselect enable-feature with-faillock
+
+# Perform Installation in Text Mode
+graphical
+
+# Package Selection
+```
+%packages
+-openssh-server
+@core
+@networkmanager-submodules
+htop
+vim
+mc
+ccze
+screen
+neofetch
+open-vm-tools
+fluxbox
+xmodmap
+xorg-x11-server-Xorg
+xorg-x11-xinit
+xorg-x11-drivers
+xorg-x11-drv-vmware
+xorg-x11-xdm
+xorg-x11-drv-evdev
+xdm
+xcompmgr
+xterm
+curl
+%end
+```
+
+# Reboot After Installation
+reboot --eject
