@@ -7,7 +7,7 @@ cd rpms
 cd generic-release
 
 fedpkg mockbuild
-``
+```
 
 ##Pasos para la instalación:
 ```
