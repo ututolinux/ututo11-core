@@ -29,8 +29,8 @@ lorax -p Fedora -v 40 -r 40 \
 ```
 
 ```
-mkksiso --ks  {path to repo}/image/kickstart/anaconda-ks.cfg \ 
-    ./results/boot.iso \
+mkksiso -V "Ututo11Alfa" --rm "quiet" --ks  {path to repo}/image/kickstart/anaconda-ks.cfg \ 
+    ./results/images/boot.iso \
     ututo11alpha.iso
 ```
 
@@ -57,14 +57,25 @@ virsh create {path to repo}/virtualmachine/ututo11-alfa.kvm.xml
 ```
 
 ### Arrancar la VM
+
+> [!WARNING]
+Atención: La instalación desatendida borrará completamente el disco vda
+
 ```
 virsh start ututo11-alfa
 ```
+
+
+> [!WARNING]
+Atención: Luego de la instalación cambiar el orden de arranque para vda en lugar de sda, en Opciones de Arranque desactivar SATA CDROM1
+
 
 ### Ingresar por primera vez
 ```
 ssh ututo@ututo
 ```
+Adivina la contraseña :wink:
+
 
 Si no se reconoce el hostname se puede averiguar la IP con 
 ```
@@ -74,8 +85,9 @@ sudo virsh net-dhcp-leases default
 ### Copiar los rpms
 
 ```
-scp {path to repo}/rpms/generic-release/results_generic-release/40/0.2/generic-release-40-0.2.noarch.rpm ututo@ututo:
-scp {path to repo}/rpms/generic-release/results_generic-release/40/0.2/generic-release-common-40-0.2.noarch.rpm ututo@ututo:
+scp {path to repo}/rpms/generic-release/results_generic-release/40/0.2/generic-release-40-0.2.noarch.rpm \
+    {path to repo}/rpms/generic-release/results_generic-release/40/0.2/generic-release-common-40-0.2.noarch.rpm \
+    ututo@ututo:
 ```
 
 ### Ingresar e instalar RPMs
