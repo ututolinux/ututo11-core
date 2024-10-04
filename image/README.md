@@ -29,7 +29,7 @@ lorax -p Fedora -v 40 -r 40 \
 ```
 
 ```
-mkksiso -V "Ututo11Alfa" --rm "quiet" --ks  {path to repo}/image/kickstart/anaconda-ks.cfg \ 
+mkksiso -V "Ututo11Alfa" --rm "quiet" --ks  {path to repo}/image/kickstart/anaconda-ks-desktop.cfg \ 
     ./results/images/boot.iso \
     ututo11alpha.iso
 ```
