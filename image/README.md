@@ -22,19 +22,22 @@ sudo su -
 ```
 
 ```
-lorax -p Fedora -v 40 -r 40 \
+lorax -p Ututo -v 40 -r 40 \
     -s http://dl.fedoraproject.org/pub/fedora/linux/releases/40/Everything/x86_64/os/ \
     -s http://dl.fedoraproject.org/pub/fedora/linux/updates/40/Everything/x86_64/ \
+    -s http://dl.ututo.ar/ututo/updates/11/ \
     ./results/
 ```
 
 ```
-mkksiso -V "Ututo11Alfa" --rm "quiet" --ks  {path to repo}/image/kickstart/anaconda-ks-desktop.cfg \ 
+mkksiso -V "Ututo11Alfa" \
+    -c inst.addrepo=Ututo,http://dl.ututo.ar/ututo/updates/11/  \
+    --ks {path to repo}/image/kickstart/anaconda-ks-desktop.cfg \
     ./results/images/boot.iso \
-    ututo11alpha.iso
+    ututo11alfa.iso
 ```
 
-Copiar la imagen *ututo11alpha.iso* a un pendrive o maquina origen de instalación.
+Copiar la imagen *ututo11alfa.iso* a un pendrive o maquina origen de instalación.
 
 
 ### Si usas qemu para crear una maquina virtual:
@@ -82,25 +85,7 @@ Si no se reconoce el hostname se puede averiguar la IP con
 sudo virsh net-dhcp-leases default  
 ```
 
-### Copiar los rpms
-
-```
-scp {path to repo}/rpms/generic-release/results_generic-release/40/0.2/generic-release-40-0.2.noarch.rpm \
-    {path to repo}/rpms/generic-release/results_generic-release/40/0.2/generic-release-common-40-0.2.noarch.rpm \
-    ututo@ututo:
-```
-
-### Ingresar e instalar RPMs
-```
-ssh ututo@ututo
-```
-
-```
-sudo dnf install generic-release-40-0.2.noarch.rpm generic-release-common-40-0.2.noarch.rpm --allowerasing
-```
-
-
-Comprobar que cambia el nombre de la distro
+Comprobar el nombre de la distro
 ```
 hostnamectl
 ```
