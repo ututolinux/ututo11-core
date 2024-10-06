@@ -6,12 +6,12 @@
 cd rpms
 cd generic-release
 
-fedpkg mockbuild
+fedpkg --release f40 mockbuild
 ```
 
 ## Pasos para la instalación:
 ```
-sudo dnf5 install results_generic-release/40/0.2/generic-release-40-0.2.noarch.rpm results_generic-release/40/0.2/generic-release-common-40-0.2.noarch.rpm --allowerasing
+sudo dnf install results_ututo-release/40/1/ututo-release-40-1.noarch.rpm results_ututo-release/40/1/ututo-release-common-40-1.noarch.rpm results_ututo-release/40/1/ututo-release-identity-basic-40-1.noarch.rpm --allowerasing
 ```
 
 
