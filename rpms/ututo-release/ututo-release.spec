@@ -254,7 +254,7 @@ sed -i 's|@@VERSION@@|%{dist_version}|g' %{SOURCE2}
 
 %install
 install -d %{buildroot}%{_prefix}/lib
-echo "Ututo release %{version} (%{release_name})" > %{buildroot}%{_prefix}/lib/ututo-release
+echo "Ututo release %{ututo_version} (%{release_name})" > %{buildroot}%{_prefix}/lib/ututo-release
 echo "cpe:/o:fedoraproject:fedora:%{version}" > %{buildroot}%{_prefix}/lib/system-release-cpe
 
 # Symlink the -release files
