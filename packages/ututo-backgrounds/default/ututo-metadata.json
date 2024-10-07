@@ -1,0 +1,13 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "kde@ututo.ar",
+                "Name": "Ututo KDE"
+            }
+        ],
+        "Id": "UTUTO",
+        "Name": "Ututo 11",
+        "License": "CC-BY-SA-4.0"
+    }
+}

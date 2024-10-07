@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+<wallpapers>
+    <wallpaper deleted="false">
+        <name>Ututo 11 Default</name>
+        <filename>/usr/share/backgrounds/ututo/default/ututo-01-day.png</filename>
+        <filename-dark>/usr/share/backgrounds/ututo/default/ututo-01-night.png</filename-dark>
+        <options>zoom</options>
+        <shade_type>solid</shade_type>
+        <pcolor>#51a2da</pcolor>
+        <scolor>#294172</scolor>
+    </wallpaper>
+    <wallpaper deleted="false">
+        <name>Fedora 40 Time of Day</name>
+        <filename>/usr/share/backgrounds/ututo/default/ututo.xml</filename>
+        <options>zoom</options>
+    </wallpaper>
+</wallpapers>
