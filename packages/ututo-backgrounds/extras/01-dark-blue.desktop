@@ -1,0 +1,26 @@
+[Desktop Entry]
+Name=Dark Blue (Ututo Supplemental)
+
+X-KDE-PluginInfo-Name=Dark Blue (Ututo Supplemental)
+X-KDE-PluginInfo-Author=Ututo Design
+X-KDE-PluginInfo-Email=design@ututo.ar
+X-KDE-PluginInfo-Name=Ututo
+X-KDE-PluginInfo-Version=40.0
+X-KDE-PluginInfo-Website=https://ututo.ar
+X-KDE-PluginInfo-Category=
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=CC-BY-SA 4.0
+X-KDE-PluginInfo-EnabledByDefault=true
+X-Plasma-API=5.0
+
+[Settings]
+FallbackTheme=default
+
+[Wallpaper]
+defaultWallpaperTheme=Ututo
+defaultFileSuffix=.png
+defaultWidth=1920
+defaultHeight=1200
+
+[Branding]
+homepage=https://ututo.ar

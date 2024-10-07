@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wallpapers SYSTEM "mate-wp-list.dtd">
+<wallpapers>
+    <wallpaper deleted="false">
+        <name>ututo Supplemental Wallpapers Slideshow</name>
+        <filename>/usr/share/backgrounds/ututo/extras/ututo-extras.xml</filename>
+        <options>scaled</options>
+    </wallpaper>
+
+    <wallpaper deleted="false">
+        <name>Dark Blue (ututo Supplemental)</name>
+        <filename>/usr/share/backgrounds/ututo/extras/01-dark-blue.png</filename>
+        <options>scaled</options>
+    </wallpaper>
+
+    <wallpaper deleted="false">
+        <name>Light Blue (ututo Supplemental)</name>
+        <filename>/usr/share/backgrounds/ututo/extras/01-light-blue.png</filename>
+        <options>scaled</options>
+    </wallpaper>
+
+</wallpapers>
