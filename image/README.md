@@ -145,3 +145,11 @@ ututo@ututoalfa:~$
 
 
 ``` 
+
+
+# Instrucciones para construir la imagen livecd
+
+``` 
+livecd-creator --config {path to repo}/image/kickstart/ututo-live-mate.ks \
+  --product=UTUTO --fslabel=ututo11live
+``` 
