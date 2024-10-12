@@ -1,14 +1,18 @@
-	
-lang en_US.UTF-8
-keyboard us
-timezone US/Eastern
+# Keyboard layouts
+keyboard --vckeymap=es --xlayouts='es','latam'
+# System language
+lang es_AR.UTF-8
+
+# Network information
+timezone America/Argentina/Buenos_Aires --utc
+
 selinux --enforcing
 firewall --enabled --service=mdns
 xconfig --startxonboot
 zerombr
 clearpart --all
-part biosboot --size 1 
 part /boot/efi --fstype=efi --size=500
+part biosboot --size 1 
 part / --size 10000  --fstype ext4
 	
 services --enabled=NetworkManager,ModemManager --disabled=sshd
@@ -20,11 +24,14 @@ shutdown
 	
 repo --name=fedora --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?repo=fedora-$releasever&arch=$basearch
 repo --name=updates --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f$releasever&arch=$basearch
-#repo --name=updates-testing --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?repo=updates-testing-f$releasever&arch=$basearch
+#repo --name=updates-testing --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?repo=updates-testing-f$releasever&arch=$basearch 
 url --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?repo=fedora-$releasever&arch=$basearch
+repo --name=ututo --baseurl=http://ututo.nivel7.com.ar/ututo/updates/11/ 
 	
 	
 %packages
+
+
 # Explicitly specified here:
 # <notting> walters: because otherwise dependency loops cause yum issues.
 kernel
@@ -62,8 +69,14 @@ livesys-scripts
 
 # install env-group to resolve RhBug:1891500
 @^mate-desktop-environment
+-fedora-release
+-fedora-release-matecompiz
+ututo-release
+ututo-release-common
+ututo-release-identity-basic
+ututo-logos
 
-fedora-release-matecompiz
+
 ccsm
 simple-ccsm
 emerald-themes
@@ -74,7 +87,7 @@ fusion-icon
 -audacious
 
 # office
-@libreoffice
+#@libreoffice
 
 # dsl tools
 rp-pppoe
@@ -90,7 +103,6 @@ nss-mdns
 -fedora-icon-theme
 -gnome-icon-theme
 -gnome-icon-theme-symbolic
--gnome-logs
 -gnome-software
 -gnome-user-docs
 
@@ -103,12 +115,6 @@ nss-mdns
 # Legacy cmdline things we don't want
 -telnet
 
-
-# Common packages removed from comps
-# For F14, these removals should be moved to comps itself
-
-# save some space
--hplip
 
 %end
 
@@ -163,7 +169,7 @@ rm -f /boot/*-rescue*
 	
 # Disable network service here, as doing it in the services line
 # fails due to RHBZ #1369794
-systemctl disable network
+# systemctl disable network
 	
 	
 # Remove machine-id on pre generated images
