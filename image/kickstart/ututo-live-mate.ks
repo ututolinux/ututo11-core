@@ -1,5 +1,5 @@
 # Keyboard layouts
-keyboard --vckeymap=es --xlayouts='es','latam'
+keyboard --vckeymap=es --xlayouts='latam','es' --switch=win_space_toggle
 # System language
 lang es_AR.UTF-8
 
@@ -17,7 +17,8 @@ part / --size 10000  --fstype ext4
 	
 services --enabled=NetworkManager,ModemManager --disabled=sshd
 	
-network --bootproto=dhcp --device=link --activate
+network --bootproto=dhcp --device=link --activate --hostname=ututoalfa
+
 rootpw --lock --iscrypted locked
 
 shutdown
@@ -26,7 +27,7 @@ repo --name=fedora --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?rep
 repo --name=updates --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f$releasever&arch=$basearch
 #repo --name=updates-testing --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?repo=updates-testing-f$releasever&arch=$basearch 
 url --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?repo=fedora-$releasever&arch=$basearch
-repo --name=ututo --baseurl=http://ututo.nivel7.com.ar/ututo/updates/11/ 
+repo --name=ututo --baseurl=http://ututo.nivel7.com.ar/ututo/updates/11/ --install
 	
 	
 %packages
@@ -75,7 +76,47 @@ ututo-release
 ututo-release-common
 ututo-release-identity-basic
 ututo-logos
+ututo-repos
+julietaula-montserrat-fonts
 
+-google-noto-naskh-arabic-vf-fonts
+-google-noto-serif-cjk-vf-fonts
+-google-noto-serif-bengali-vf-fonts
+-google-noto-serif-sinhala-vf-fonts
+-google-noto-serif-telugu-vf-fonts
+-google-noto-serif-devanagari-vf-fonts
+-google-noto-serif-devanagari-vf-fonts
+-google-noto-serif-oriya-vf-fonts
+-google-noto-serif-tamil-vf-fonts
+-google-noto-serif-khmer-vf-fonts
+-google-noto-serif-gurmukhi-vf-fonts
+-google-noto-serif-georgian-vf-fonts
+-google-noto-serif-gujarati-vf-fonts
+-google-noto-serif-lao-vf-fonts
+-google-noto-serif-thai-vf-fonts
+-google-noto-sans-mono-cjk-vf-fonts
+-google-noto-sans-sinhala-vf-fonts
+-google-noto-sans-arabic-vf-fonts
+-google-noto-sans-telugu-vf-fonts
+-google-noto-sans-gujarati-vf-fonts
+-google-noto-sans-oriya-vf-fonts
+-google-noto-sans-kannada-vf-fonts
+-google-noto-sans-khmer-vf-fonts
+-google-noto-sans-tamil-vf-fonts
+-google-noto-sans-georgian-vf-fonts
+-google-noto-sans-gurmukhi-vf-fonts
+-google-noto-sans-lao-vf-fonts
+-google-noto-sans-thai-vf-fonts
+-madan-fonts
+-sil-nuosu-fonts
+
+-default-fonts-other-serif
+-default-fonts-other-sans
+-default-fonts-cjk-serif
+-default-fonts-cjk-mono
+
+-thunderbird
+-pidgin
 
 ccsm
 simple-ccsm
