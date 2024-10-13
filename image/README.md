@@ -151,5 +151,6 @@ ututo@ututoalfa:~$
 
 ``` 
 livecd-creator --config {path to repo}/image/kickstart/ututo-live-mate.ks \
-  --product=UTUTO --fslabel=ututo11live
+  --product=Ututo \
+  --fslabel=ututo11live
 ``` 

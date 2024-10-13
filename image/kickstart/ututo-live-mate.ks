@@ -1,5 +1,5 @@
 # Keyboard layouts
-keyboard --vckeymap=es --xlayouts='latam','es' --switch=win_space_toggle
+keyboard --vckeymap=es --xlayouts='latam','es','us' --switch='grp:win_space_toggle'
 # System language
 lang es_AR.UTF-8
 
@@ -219,5 +219,20 @@ touch /etc/machine-id
 	
 # set livesys session type
 sed -i 's/^livesys_session=.*/livesys_session="mate"/' /etc/sysconfig/livesys
+
+# Change mate default keyboard layout
+cat >> /etc/dconf/db/local.d/01-set-layouts << EOF
+[org/mate/desktop/peripherals/keyboard/kbd]
+
+layouts=['latam','es','us']
+options=['grp\tgrp:win_space_toggle']
+
+[org/mate/desktop/peripherals/keyboard/general]
+
+default-group=0
+
+EOF
+
+dconf update
 
 %end
