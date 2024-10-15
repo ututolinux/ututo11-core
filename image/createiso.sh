@@ -9,4 +9,4 @@ scp ututo11alfa.iso.md5 ututo11alfa.iso "${DEST}"
 sudo livecd-creator --config "${REPO}"/image/kickstart/ututo-live-mate.ks --product=Ututo --fslabel=Ututo_Live_11_Alfa
 mv Ututo_Live_11_Alfa.iso Ututo-Live-x86_64-11-Alfa.iso
 md5sum Ututo-Live-x86_64-11-Alfa.iso > Ututo-Live-x86_64-11-Alfa.iso.md5
-scp Ututo-Live-x86_64-11-Alfa.iso "${DEST}"
+scp Ututo-Live-x86_64-11-Alfa.iso.md5 Ututo-Live-x86_64-11-Alfa.iso "${DEST}"
