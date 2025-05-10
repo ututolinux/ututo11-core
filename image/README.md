@@ -1,6 +1,6 @@
 # Instrucciones para construir la imagen
 
-Usando una maquina real o virtual Fedora 40
+Usando una maquina real o virtual Fedora 42
 
 ### Si no lo hiciste clonar este repo:
 
@@ -22,10 +22,10 @@ sudo su -
 ```
 
 ```
-lorax -p Ututo -v 40 -r 40 \
-  --volid Ututo_11_Alfa \
-  -s http://dl.fedoraproject.org/pub/fedora/linux/releases/40/Everything/x86_64/os/ \
-  -s http://dl.fedoraproject.org/pub/fedora/linux/updates/40/Everything/x86_64/  \
+lorax -p Ututo -v 42 -r 42 \
+  --volid Ututo_11_Beta \
+  -s http://dl.fedoraproject.org/pub/fedora/linux/releases/42/Everything/x86_64/os/ \
+  -s http://dl.fedoraproject.org/pub/fedora/linux/updates/42/Everything/x86_64/  \
   ./results/
 ```
 
@@ -33,10 +33,10 @@ lorax -p Ututo -v 40 -r 40 \
 mkksiso \
   --ks {path to repo}/image/kickstart/anaconda-ks-desktop.cfg \
     ./results/images/boot.iso \
-    ututo11alfa.iso
+    ututo11beta.iso
 ```
 
-Copiar la imagen *ututo11alfa.iso* a un pendrive o maquina origen de instalación.
+Copiar la imagen *ututo11beta.iso* a un pendrive o maquina origen de instalación.
 
 
 ### Si usas qemu para crear una maquina virtual:
@@ -90,17 +90,17 @@ hostnamectl
 ```
 
 ```
-     Static hostname: ututoalfa
+     Static hostname: ututobeta
            Icon name: computer-vm
              Chassis: vm 🖴
           Machine ID: 7ca2e8b4eccc4e328577fef17bdf5888
              Boot ID: ee66b48a2ce94ad6bee00a22ece405f2
       Virtualization: kvm
-    Operating System: Ututo Linux 11 (Araucaria-alfa) 
-         CPE OS Name: cpe:/o:ututoproject:ututo:40
+    Operating System: Ututo Linux 11 (Araucaria-beta) 
+         CPE OS Name: cpe:/o:ututoproject:ututo:42
       OS Support End: Tue 2025-05-13
 OS Support Remaining: 7month 1d
-              Kernel: Linux 6.10.12-200.fc40.x86_64
+              Kernel: Linux 6.10.12-200.fc42.x86_64
         Architecture: x86-64
      Hardware Vendor: QEMU
       Hardware Model: Standard PC _Q35 + ICH9, 2009_
@@ -117,7 +117,7 @@ ututo@ututoalfa:~$ fastfetch --logo logos/ututo_logo_ascii_small.txt
                           ((**              ---------------
    ((                    ( ** *             OS: Ututo GNU/Linux 11 x86_64
  , .  .                  *  , *             Host: KVM/QEMU Standard PC (Q35 + ICH9, 2009) (pc-q35-9.0)
-  ((((                 *( **** **           Kernel: Linux 6.10.12-200.fc40.x86_64
+  ((((                 *( **** **           Kernel: Linux 6.10.12-200.fc42.x86_64
  ((((((                  *,** *             Uptime: 2 mins
  *                / /    (    (     ,/      Packages: 1729 (rpm)
   ((((             /*   ( (((( **// /       Shell: bash 5.2.26
@@ -141,7 +141,7 @@ ututo@ututoalfa:~$ fastfetch --logo logos/ututo_logo_ascii_small.txt
 
                                                                     
                                                                     
-ututo@ututoalfa:~$ 
+ututo@ututobeta:~$ 
 
 
 ``` 
