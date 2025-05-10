@@ -17,7 +17,7 @@ part / --size 10000  --fstype ext4
 	
 services --enabled=NetworkManager,ModemManager --disabled=sshd
 	
-network --bootproto=dhcp --device=link --activate --hostname=ututoalfa
+network --bootproto=dhcp --device=link --activate --hostname=ututobeta
 
 rootpw --lock --iscrypted locked
 
@@ -78,6 +78,7 @@ ututo-release-identity-basic
 ututo-logos
 ututo-repos
 julietaula-montserrat-fonts
+lightdm-gtk
 
 -google-noto-naskh-arabic-vf-fonts
 -google-noto-serif-cjk-vf-fonts
@@ -115,6 +116,7 @@ julietaula-montserrat-fonts
 -default-fonts-cjk-serif
 -default-fonts-cjk-mono
 
+-slick-greeter
 -thunderbird
 -pidgin
 
